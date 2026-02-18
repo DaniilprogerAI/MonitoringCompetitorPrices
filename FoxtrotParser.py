@@ -1,32 +1,42 @@
-import undetected_chromedriver as uc
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from webdriver_manager.chrome import ChromeDriverManager
 import time
 import json
 import re
 
 
 def get_foxtrot_price_fixed(url):
-    options = uc.ChromeOptions()
-    # На всякий случай добавим headless, если не хочешь видеть окно
-    # options.add_argument('--headless')
+    options = Options()
+    # Remove automation flags
+    options.add_argument('--disable-blink-features=AutomationControlled')
+    options.add_experimental_option("excludeSwitches", ["enable-automation"])
+    options.add_experimental_option('useAutomationExtension', False)
+    # Uncomment for headless mode
+    # options.add_argument('--headless=new')
 
     try:
-        # Явно указываем версию 144, чтобы он не искал 145-ю
-        driver = uc.Chrome(options=options, version_main=144)
+        # Use standard ChromeDriver with webdriver-manager
+        service = Service(ChromeDriverManager().install())
+        driver = webdriver.Chrome(service=service, options=options)
 
-        print(f"Открываем страницу: {url}")
+        print(f"Opening page: {url}")
         driver.get(url)
 
-        # Ждем прогрузки (Cloudflare может занять время)
+        # Wait for page to load (Cloudflare may take time)
         time.sleep(7)
 
-        # Ищем цену в JSON-LD (самый надежный метод)
-        scripts = driver.find_elements(uc.By.XPATH, "//script[@type='application/ld+json']")
+        # Look for price in JSON-LD structured data
+        scripts = driver.find_elements(By.XPATH, "//script[@type='application/ld+json']")
         for script in scripts:
             try:
                 data = json.loads(script.get_attribute('innerHTML'))
                 items = data if isinstance(data, list) else [data]
                 for item in items:
-                    # Ищем поле price в структуре Product или Offers
                     if 'offers' in item:
                         price = item['offers'].get('price')
                         if price:
@@ -37,7 +47,7 @@ def get_foxtrot_price_fixed(url):
         return None
 
     except Exception as e:
-        print(f"❌ Произошла ошибка: {e}")
+        print(f"Error occurred: {e}")
         return None
     finally:
         try:

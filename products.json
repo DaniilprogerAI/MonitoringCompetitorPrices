@@ -1,0 +1,54 @@
+{
+  "products": [
+    {
+      "name": "Apple AirPods Pro",
+      "technosmart_price": 8999,
+      "margin": 15,
+      "urls": {
+        "rozetka": "https://rozetka.com.ua/ua/apple-airpods-pro-3-with-magsafe-case-usb-c-mfhp4ze-a/p543663795/",
+        "foxtrot": "https://www.foxtrot.com.ua/uk/shop/naushniki-apple-airpods-3-pro.html",
+        "allo": "https://allo.ua/ua/naushniki/naushniki-apple-airpods-pro-2nd-gen-usb-c-mtjv3ty-a-white.html"
+      }
+    },
+    {
+      "name": "Samsung Galaxy Buds2 Pro",
+      "technosmart_price": 5499,
+      "margin": 18,
+      "urls": {
+        "rozetka": "https://rozetka.com.ua/ua/samsung-sm-r630nzaasek/p440057501/",
+        "foxtrot": "https://www.foxtrot.com.ua/uk/shop/naushniki-samsung-galaxy-buds3-pro-white.html",
+        "allo": "https://allo.ua/ua/naushniki/naushniki-samsung-galaxy-buds2-pro-graphite.html"
+      }
+    },
+    {
+      "name": "Xiaomi Redmi Buds 4 Pro",
+      "technosmart_price": 2199,
+      "margin": 22,
+      "urls": {
+        "rozetka": "https://rozetka.com.ua/ua/350776524/p350776524/",
+        "foxtrot": "https://www.foxtrot.com.ua/uk/shop/naushniki-xiaomi-redmi-buds-4-pro.html",
+        "allo": "https://allo.ua/ua/aksessuary-dlja-naushnikov/chehol-silicon-becover-dlja-xiaomi-redmi-buds-4-pro-yellow-708615.html"
+      }
+    },
+    {
+      "name": "Anker PowerCore 20000mAh",
+      "technosmart_price": 1599,
+      "margin": 25,
+      "urls": {
+        "rozetka": "https://rozetka.com.ua/ua/universalnye-mobilnye-batarei-anker-157127358/p562212300/",
+        "foxtrot": "https://www.foxtrot.com.ua/uk/shop/seteviye-i-avtomobilniye-zaryadniye-ustrojstva-anker-powerport-511-22320-2652.html",
+        "allo": "https://allo.ua/ua/universalnye-mobilnye-batarei/power-bank-anker-powercore-20000mah-30w-pd-black-a1384g11-ru.html"
+      }
+    },
+    {
+      "name": "JBL Charge 5",
+      "technosmart_price": 4799,
+      "margin": 20,
+      "urls": {
+        "rozetka": "https://rozetka.com.ua/ua/518480459/p518480459/",
+        "foxtrot": "https://www.foxtrot.com.ua/uk/shop/portativnaia_akustika_jbl_charge-5-black-jblcharge5blk.html",
+        "allo": "https://allo.ua/ua/portativnaja-akustika/jbl-charge-5-jblcharge5grn-green.html"
+      }
+    }
+  ]
+}
